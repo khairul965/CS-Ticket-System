@@ -15,7 +15,7 @@ export default function Navbar() {
       <li><a>Blog</a></li>
       <li><a>Download</a></li>
       <li><a>Contact</a></li>
-      <li ><a className='bg-gradient-to-r from-indigo-700 from-50% via-100%  text-white' >+ New Ticket</a></li>
+      <li ><a className='bg-gradient-to-r from-purple-600 to-indigo-500 text-white' >+ New Ticket</a></li>
       
     </ul>
   </div>
