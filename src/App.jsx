@@ -9,9 +9,6 @@ import TaskStatus from './TaskStatus'
 import { toast, ToastContainer } from 'react-toastify'
 
 
-const TicketPromise = fetch("Ticket.json")
-.then(res => res.json())
-
 
 
 
@@ -20,6 +17,12 @@ function App() {
   
   const [resolved, setResolved] = useState([]);
   const [inProgress, setInProgress] =useState([]);
+
+  useEffect(() => {
+    fetch("Ticket.json")
+    .then(res => res.json())
+    .then(data => setTickets(data))
+  },[])
 
   
 const handleAddTask = (ticket) => {
@@ -63,7 +66,7 @@ const handleAddTask = (ticket) => {
    <div className='max-w-[1200px] mx-auto grid grid-cols-[70%_30%] gap-2'>
    <div className=''>
      <Suspense fallback={<p>Loading..</p>}>
-     <TicketList ticketPromise={TicketPromise} handleAddTask={handleAddTask}></TicketList>
+     <TicketList tickets={tickets} handleAddTask={handleAddTask}></TicketList>
    </Suspense>
    </div>
      

@@ -4,13 +4,8 @@ import { useEffect,useState } from 'react';
 import TicketCard from './TicketCard';
 
 
-export default function TicketList( {ticketPromise,handleAddTask}) {
-   const [tickets,setTickets] = useState([]);
-useEffect(() => {
-       ticketPromise.then(data => {
-            setTickets(data);
-        });
-    },[ticketPromise]);
+export default function TicketList( {tickets,handleAddTask}) {
+   
     
 
     

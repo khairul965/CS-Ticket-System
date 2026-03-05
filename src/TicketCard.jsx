@@ -13,9 +13,9 @@ export default function TicketCard({ ticket,handleAddTask }) {
       </div>
       <p className='mb-1.5'>{ticket.description} </p>
       
-      <div className='flex justify-between' >
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-1.5' >
         
-        <div className='flex justify-between gap-4'>
+        <div className='flex justify-between gap-2'>
             <p>#{ticket.id} </p>
             <span className={`${ticket.priority === "HIGH PRIORITY" ? "text-red-500"
                 : ticket.priority === "MEDIUM PRIORITY" ? "text-orange-400"
@@ -26,7 +26,7 @@ export default function TicketCard({ ticket,handleAddTask }) {
             </span>
         </div>
 
-        <div className='flex justify-between gap-4' >
+        <div className='flex justify-between gap-2' >
             <p>{ticket.customer} </p>
             <p> <i class="fa-regular fa-calendar"></i> {ticket.createdAt} </p>
         </div>
