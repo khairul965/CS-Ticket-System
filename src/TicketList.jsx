@@ -4,7 +4,7 @@ import { useEffect,useState } from 'react';
 import TicketCard from './TicketCard';
 
 
-export default function TicketList( {TicketPromise}) {
+export default function TicketList( {TicketPromise,handleAddTask}) {
     const [tickets,setTickets] = useState([]);
 
     useEffect(() => {
@@ -15,14 +15,16 @@ export default function TicketList( {TicketPromise}) {
 
     console.log(tickets);
   return (
-    <div >
-        <h1>Customer Tickets:{tickets.length} </h1>
+        
+        <div>
+            <h1 className='font-extrabold'>Customer Tickets</h1>
 
-        <div className='grid lg:grid-cols-2 md:grid-cols-1 gap-2'>  
+            <div className=' grid grid-cols-1 md:grid-cols-2 gap-2'>  
             {
-            tickets.map(ticketCard => <TicketCard ticketCard={ticketCard}></TicketCard>)
+            tickets.map(ticket => <TicketCard ticket={ticket}  handleAddTask={handleAddTask}></TicketCard>)
         }
         </div>
-    </div>
+
+        </div>
   )
 }

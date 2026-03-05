@@ -1,34 +1,34 @@
 import React from 'react'
 
-export default function TicketCard({ ticketCard }) {
-    console.log(ticketCard.title);
+export default function TicketCard({ ticket,handleAddTask }) {
+    console.log(ticket.title);
   return (
     
-    <div className='border-2 border-solid p-4 rounded-lg  my-2 bg-amber-50 shadow-xl' >
+    <div className='border-2 border-solid p-4 rounded-lg  my-2 bg-amber-50 shadow-xl cursor-pointer hover:shadow-2xl' onClick={() => handleAddTask(ticket)} >
       <div className='flex justify-between mb-1.5' > 
-        <h2 className='font-bold'>{ticketCard.title} </h2>
+        <h2 className='font-bold'>{ticket.title} </h2>
         <span className={`p-3 rounded-2xl font-semibold
-        ${ticketCard.status === "Open" ? "bg-green-500 text-green-800" : "bg-yellow-300 text-black"}
-            `}>{ticketCard.status}  </span>
+        ${ticket.status === "Open" ? "bg-green-500 text-green-800" : "bg-yellow-300 text-black"}
+            `}>{ticket.status}  </span>
       </div>
-      <p className='mb-1.5'>{ticketCard.description} </p>
+      <p className='mb-1.5'>{ticket.description} </p>
       
       <div className='flex justify-between' >
         
         <div className='flex justify-between gap-4'>
-            <p>#{ticketCard.id} </p>
-            <span className={`${ticketCard.priority === "HIGH PRIORITY" ? "text-red-500"
-                : ticketCard.priority === "MEDIUM PRIORITY" ? "text-orange-400"
+            <p>#{ticket.id} </p>
+            <span className={`${ticket.priority === "HIGH PRIORITY" ? "text-red-500"
+                : ticket.priority === "MEDIUM PRIORITY" ? "text-orange-400"
                 : "text-green-600"
             }
                 `}>
-                {ticketCard.priority}
+                {ticket.priority}
             </span>
         </div>
 
         <div className='flex justify-between gap-4' >
-            <p>{ticketCard.customer} </p>
-            <p> <i class="fa-regular fa-calendar"></i> {ticketCard.createdAt} </p>
+            <p>{ticket.customer} </p>
+            <p> <i class="fa-regular fa-calendar"></i> {ticket.createdAt} </p>
         </div>
 
       </div>
