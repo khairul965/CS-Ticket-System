@@ -4,7 +4,7 @@ export default function TicketCard({ ticket,handleAddTask }) {
     
   return (
     
-    <div className='border-2 border-solid p-4 rounded-lg  my-2 bg-amber-50 shadow-xl cursor-pointer hover:shadow-2xl' onClick={() => handleAddTask(ticket)} >
+    <div className='border-2 border-solid p-4 rounded-lg  my-2 bg-white shadow-xl cursor-pointer hover:shadow-2xl' onClick={() => handleAddTask(ticket)} >
       <div className='flex justify-between mb-1.5' > 
         <h2 className='font-bold'>{ticket.title} </h2>
         <span className={`p-3 rounded-2xl font-semibold

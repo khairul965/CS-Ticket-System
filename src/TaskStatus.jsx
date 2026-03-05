@@ -13,7 +13,7 @@ export default function TaskStatus({inProgress,resolved, handleComplete}) {
       <h2 className='font-semibold mb-2'>Task Status</h2>
       {
         inProgress.map(task => (
-           <div key={task.id}  className='bg-amber-100 shadow-xl mb-2 p-3'> 
+           <div key={task.id}  className='bg-white shadow-xl mb-2 p-3'> 
 
             <h3 className='font-semibold break-words'>{task.title}</h3>
 
