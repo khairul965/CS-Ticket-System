@@ -4,16 +4,16 @@ import { useEffect,useState } from 'react';
 import TicketCard from './TicketCard';
 
 
-export default function TicketList( {TicketPromise,handleAddTask}) {
-    const [tickets,setTickets] = useState([]);
-
-    useEffect(() => {
-        TicketPromise.then(data => {
+export default function TicketList( {ticketPromise,handleAddTask}) {
+   const [tickets,setTickets] = useState([]);
+useEffect(() => {
+       ticketPromise.then(data => {
             setTickets(data);
         });
-    },[TicketPromise]);
+    },[ticketPromise]);
+    
 
-    console.log(tickets);
+    
   return (
         
         <div>
@@ -21,7 +21,7 @@ export default function TicketList( {TicketPromise,handleAddTask}) {
 
             <div className=' grid grid-cols-1 md:grid-cols-2 gap-2'>  
             {
-            tickets.map(ticket => <TicketCard ticket={ticket}  handleAddTask={handleAddTask}></TicketCard>)
+            tickets.map(ticket => <TicketCard ticket={ticket} key={ticket.id} handleAddTask={handleAddTask}></TicketCard>)
         }
         </div>
 

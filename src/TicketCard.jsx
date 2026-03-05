@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function TicketCard({ ticket,handleAddTask }) {
-    console.log(ticket.title);
+    
   return (
     
     <div className='border-2 border-solid p-4 rounded-lg  my-2 bg-amber-50 shadow-xl cursor-pointer hover:shadow-2xl' onClick={() => handleAddTask(ticket)} >
